@@ -1,13 +1,13 @@
 /*
- *File: ChangeMaker. java 
+ * File: ChangeMaker.java
 *
 * Programmer: Arelys Alvarez
 */
 
-/** 
+/*
  * Compute the changes due - using the minimum coinage necessary - when
  * the users enters the cost of a purchase and the amount tendered
- * /
+ */
 
 public class ChangeMaker
 {
@@ -21,13 +21,14 @@ public class ChangeMaker
        private int penniesDue ;                 //numbers of pennies 
   
  
-       /**
+       /*
        * Constructs a ChangeMaker object
        * 
        * @param totalDue the amount of the purchase
        * @param amountReceived the amount tendered (paid)
-       * /
-     public ChangeMaker(double totalDue, double amount Received)
+       */
+
+     public ChangeMaker(double totalDue, double amountReceived)
      {
      //initialize instance var's 
      amountDue = totalDue ; 
@@ -38,13 +39,14 @@ public class ChangeMaker
      }
    
     
-     /**
+     /*
      * Computes the number of coins of each denomination to be given 
      */
+
    public void computeChange()
    {
-    int changeDue;      // total change due, in cents
-     if (amountDue == amountTendered)  
+    int changeDue ;      // total change due, in cents
+     if(amountDue == amountTendered)
      {
         System.out.println("\nExact change! Thank you and have a nice "
                      + " day!") ;
@@ -52,7 +54,7 @@ public class ChangeMaker
      else if (amountDue > amountTendered)   // owes more mony!
      {
         System.out.printf("\nLo siento, you still owe me another %.2f%n", 
-                     amoutDue - amountTendered) ;
+                     amountDue - amountTendered) ;
      }
      else // change is due 
      {
@@ -66,10 +68,10 @@ public class ChangeMaker
  
          // now do the same for all other coins 
          quartersDue = changeDue / 25 ;
-         changeDue = % 25 ;
+         changeDue = changeDue % 25 ;
  
          dimesDue = changeDue / 10 ;
-         changeDue = ChangeDue % 10 ;
+         changeDue = changeDue % 10 ;
 
          nickelsDue = changeDue / 5 ;
          changeDue = changeDue % 5 ;
@@ -89,7 +91,7 @@ public class ChangeMaker
      {
          System.out.println("\t" + dollarsDue + " dollar(s)") ;
      }
-     if (quartesDue != 0)
+     if (quartersDue != 0)
      {
          System.out.println("\t" + quartersDue + " quarter(s)") ;
      }
